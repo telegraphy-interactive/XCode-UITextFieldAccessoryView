@@ -23,6 +23,7 @@
 		326B54E1171DF15A00B42129 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326B54BC171DF15A00B42129 /* Foundation.framework */; };
 		326B54E9171DF15A00B42129 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 326B54E7171DF15A00B42129 /* InfoPlist.strings */; };
 		326B54EC171DF15A00B42129 /* TestTextAuxInputTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 326B54EB171DF15A00B42129 /* TestTextAuxInputTests.m */; };
+		326B54F7171DF38000B42129 /* TTAITextAuxInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 326B54F6171DF38000B42129 /* TTAITextAuxInputView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		326B54E8171DF15A00B42129 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		326B54EA171DF15A00B42129 /* TestTextAuxInputTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTextAuxInputTests.h; sourceTree = "<group>"; };
 		326B54EB171DF15A00B42129 /* TestTextAuxInputTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTextAuxInputTests.m; sourceTree = "<group>"; };
+		326B54F5171DF38000B42129 /* TTAITextAuxInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAITextAuxInputView.h; sourceTree = "<group>"; };
+		326B54F6171DF38000B42129 /* TTAITextAuxInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAITextAuxInputView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 				326B54D2171DF15A00B42129 /* MainStoryboard.storyboard */,
 				326B54D5171DF15A00B42129 /* TTAIViewController.h */,
 				326B54D6171DF15A00B42129 /* TTAIViewController.m */,
+				326B54F5171DF38000B42129 /* TTAITextAuxInputView.h */,
+				326B54F6171DF38000B42129 /* TTAITextAuxInputView.m */,
 				326B54C1171DF15A00B42129 /* Supporting Files */,
 			);
 			path = TestTextAuxInput;
@@ -274,6 +279,7 @@
 				326B54C7171DF15A00B42129 /* main.m in Sources */,
 				326B54CB171DF15A00B42129 /* TTAIAppDelegate.m in Sources */,
 				326B54D7171DF15A00B42129 /* TTAIViewController.m in Sources */,
+				326B54F7171DF38000B42129 /* TTAITextAuxInputView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +391,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TestTextAuxInput/TestTextAuxInput-Prefix.pch";
 				INFOPLIST_FILE = "TestTextAuxInput/TestTextAuxInput-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -396,6 +403,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TestTextAuxInput/TestTextAuxInput-Prefix.pch";
 				INFOPLIST_FILE = "TestTextAuxInput/TestTextAuxInput-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

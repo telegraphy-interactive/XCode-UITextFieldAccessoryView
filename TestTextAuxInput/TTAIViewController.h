@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface TTAIViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *hours;
+@property (weak, nonatomic) IBOutlet UITextField *night;
+@property (weak, nonatomic) IBOutlet UITextField *imc;
 
 @end
