@@ -28,7 +28,8 @@
 }
 
 - (IBAction)textFieldDone:(id)sender {
-    puts("Hey");
+    puts("Hey mister");
+    [self.night resignFirstResponder];
 }
 
 - (UIView *)getDoneView: (UITextField *)target {
