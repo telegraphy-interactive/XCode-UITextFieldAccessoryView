@@ -11,6 +11,8 @@
 
 @interface TTAIViewController ()
 
+@property  (nonatomic, strong) TTAITextAuxInputView* decorator;
+
 @end
 
 @implementation TTAIViewController
@@ -19,37 +21,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    // will crash hours input on done press
-    [TTAITextAuxInputView decorate:self.hours];
-    // on night input, will print "Hey" on done press
-    [self.night setInputAccessoryView:[self getDoneView:self.night]];
-    // will crash imc on done press
-    [self.imc setInputAccessoryView:[self getIAView:self.imc]];
+ 
+    self.decorator = [[TTAITextAuxInputView alloc] init];
+    [self.decorator decorate:self.hours];
+    [self.decorator decorate:self.night];
+    [self.decorator decorate:self.imc];
 }
-
-- (IBAction)textFieldDone:(id)sender {
-    puts("Hey mister");
-    [self.night resignFirstResponder];
-}
-
-- (UIView *)getDoneView: (UITextField *)target {
-    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0,0,100,44)];
-    [toolbar setBarStyle:UIBarStyleBlack];
-    
-    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc ]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(textFieldDone:)];
-    [toolbar setItems:[NSArray arrayWithObject:doneButton] animated:false];
-    return toolbar;
-}
-
-- (UIView *)getIAView: (UITextField *)target {
-    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0,0,100,44)];
-    [toolbar setBarStyle:UIBarStyleBlack];
-    
-    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc ]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:target action:@selector(resignFirstResponder:)];
-    [toolbar setItems:[NSArray arrayWithObject:doneButton] animated:false];
-    return toolbar;
-}
-
 
 - (void)viewDidUnload {
     [self setHours:nil];
