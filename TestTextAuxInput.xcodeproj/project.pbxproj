@@ -21,9 +21,8 @@
 		326B54DF171DF15A00B42129 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326B54DE171DF15A00B42129 /* SenTestingKit.framework */; };
 		326B54E0171DF15A00B42129 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326B54BA171DF15A00B42129 /* UIKit.framework */; };
 		326B54E1171DF15A00B42129 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326B54BC171DF15A00B42129 /* Foundation.framework */; };
-		326B54E9171DF15A00B42129 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 326B54E7171DF15A00B42129 /* InfoPlist.strings */; };
-		326B54EC171DF15A00B42129 /* TestTextAuxInputTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 326B54EB171DF15A00B42129 /* TestTextAuxInputTests.m */; };
 		326B54F7171DF38000B42129 /* TTAITextAuxInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 326B54F6171DF38000B42129 /* TTAITextAuxInputView.m */; };
+		326B552017219F9E00B42129 /* TTAITextDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 326B551F17219F9E00B42129 /* TTAITextDatePickerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,12 +54,11 @@
 		326B54D6171DF15A00B42129 /* TTAIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTAIViewController.m; sourceTree = "<group>"; };
 		326B54DD171DF15A00B42129 /* TestTextAuxInputTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestTextAuxInputTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		326B54DE171DF15A00B42129 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		326B54E6171DF15A00B42129 /* TestTextAuxInputTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestTextAuxInputTests-Info.plist"; sourceTree = "<group>"; };
-		326B54E8171DF15A00B42129 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		326B54EA171DF15A00B42129 /* TestTextAuxInputTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTextAuxInputTests.h; sourceTree = "<group>"; };
-		326B54EB171DF15A00B42129 /* TestTextAuxInputTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTextAuxInputTests.m; sourceTree = "<group>"; };
 		326B54F5171DF38000B42129 /* TTAITextAuxInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAITextAuxInputView.h; sourceTree = "<group>"; };
 		326B54F6171DF38000B42129 /* TTAITextAuxInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAITextAuxInputView.m; sourceTree = "<group>"; };
+		326B551E17219F9E00B42129 /* TTAITextDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAITextDatePickerView.h; sourceTree = "<group>"; };
+		326B551F17219F9E00B42129 /* TTAITextDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAITextDatePickerView.m; sourceTree = "<group>"; };
+		32F21BD81721AA9300CF8949 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				326B54C0171DF15A00B42129 /* TestTextAuxInput */,
-				326B54E4171DF15A00B42129 /* TestTextAuxInputTests */,
 				326B54B9171DF15A00B42129 /* Frameworks */,
 				326B54B8171DF15A00B42129 /* Products */,
 			);
@@ -127,6 +124,8 @@
 				326B54D6171DF15A00B42129 /* TTAIViewController.m */,
 				326B54F5171DF38000B42129 /* TTAITextAuxInputView.h */,
 				326B54F6171DF38000B42129 /* TTAITextAuxInputView.m */,
+				326B551E17219F9E00B42129 /* TTAITextDatePickerView.h */,
+				326B551F17219F9E00B42129 /* TTAITextDatePickerView.m */,
 				326B54C1171DF15A00B42129 /* Supporting Files */,
 			);
 			path = TestTextAuxInput;
@@ -135,6 +134,7 @@
 		326B54C1171DF15A00B42129 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				32F21BD81721AA9300CF8949 /* README.md */,
 				326B54C2171DF15A00B42129 /* TestTextAuxInput-Info.plist */,
 				326B54C3171DF15A00B42129 /* InfoPlist.strings */,
 				326B54C6171DF15A00B42129 /* main.m */,
@@ -142,25 +142,6 @@
 				326B54CC171DF15A00B42129 /* Default.png */,
 				326B54CE171DF15A00B42129 /* Default@2x.png */,
 				326B54D0171DF15A00B42129 /* Default-568h@2x.png */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		326B54E4171DF15A00B42129 /* TestTextAuxInputTests */ = {
-			isa = PBXGroup;
-			children = (
-				326B54EA171DF15A00B42129 /* TestTextAuxInputTests.h */,
-				326B54EB171DF15A00B42129 /* TestTextAuxInputTests.m */,
-				326B54E5171DF15A00B42129 /* Supporting Files */,
-			);
-			path = TestTextAuxInputTests;
-			sourceTree = "<group>";
-		};
-		326B54E5171DF15A00B42129 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				326B54E6171DF15A00B42129 /* TestTextAuxInputTests-Info.plist */,
-				326B54E7171DF15A00B42129 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -249,7 +230,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				326B54E9171DF15A00B42129 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +260,7 @@
 				326B54CB171DF15A00B42129 /* TTAIAppDelegate.m in Sources */,
 				326B54D7171DF15A00B42129 /* TTAIViewController.m in Sources */,
 				326B54F7171DF38000B42129 /* TTAITextAuxInputView.m in Sources */,
+				326B552017219F9E00B42129 /* TTAITextDatePickerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +268,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				326B54EC171DF15A00B42129 /* TestTextAuxInputTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,14 +296,6 @@
 				326B54D3171DF15A00B42129 /* en */,
 			);
 			name = MainStoryboard.storyboard;
-			sourceTree = "<group>";
-		};
-		326B54E7171DF15A00B42129 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				326B54E8171DF15A00B42129 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -462,6 +434,7 @@
 				326B54F1171DF15A00B42129 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		326B54F2171DF15A00B42129 /* Build configuration list for PBXNativeTarget "TestTextAuxInputTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +443,7 @@
 				326B54F4171DF15A00B42129 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
