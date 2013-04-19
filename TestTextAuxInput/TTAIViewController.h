@@ -12,6 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *hours;
 @property (weak, nonatomic) IBOutlet UITextField *night;
-@property (weak, nonatomic) IBOutlet UITextField *imc;
+@property (weak, nonatomic) IBOutlet UITextField *startDateTime;
+@property (weak, nonatomic) IBOutlet UITextField *endDateTime;
+
 
 @end
