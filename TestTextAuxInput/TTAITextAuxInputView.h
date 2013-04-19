@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TTAITextAuxInputView : NSObject
+@interface TTAITextAuxInputView : NSObject <UITextFieldDelegate>
 
-+ (void)decorate:(UITextField *)textField;
+- (void)decorate:(UITextField *)textField;
 
 @end

@@ -9,33 +9,39 @@
 #import "TTAITextAuxInputView.h"
 
 @interface TTAITextAuxInputView ()
-@property (copy) UITextField * textBaby;
-@property (copy) UIView *doneView;
+
+@property (nonatomic, strong) UITextField* txtActiveField;
+
 @end
+
+
 
 @implementation TTAITextAuxInputView
 
-@synthesize textBaby;
 
-+ (void)decorate:(UITextField *)textField {
-    TTAITextAuxInputView *aiv = [TTAITextAuxInputView alloc];
-    [aiv setTextBaby:textField];
-    [textField setInputAccessoryView:[aiv getDoneView]];
+@synthesize txtActiveField;
+
+- (void)done {
+    [self.txtActiveField resignFirstResponder];
 }
 
-// private
-
-- (IBAction)resignTextBaby:(id)sender {
-    [textBaby resignFirstResponder];
-}
-
-- (UIView *)getDoneView {
+- (void)decorate:(UITextField *)textField {
+    textField.delegate = self;
+    
     UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0,0,100,44)];
     [toolbar setBarStyle:UIBarStyleBlack];
         
-    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc ]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(resignTextBaby:)];
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc ]initWithTitle:@"Done"
+                                                                   style:UIBarButtonItemStyleDone
+                                                                  target:self
+                                                                  action:@selector(done)];
     [toolbar setItems:[NSArray arrayWithObject:doneButton] animated:false];
-    return toolbar;
+
+    [textField setInputAccessoryView:toolbar];
+}
+
+-(void)textFieldDidBeginEditing:(UITextField*)textField {
+    self.txtActiveField = textField;
 }
 
 @end
