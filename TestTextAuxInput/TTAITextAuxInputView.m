@@ -19,6 +19,13 @@
 
 @synthesize txtActiveField;
 
+/*
+ Adds self as observer to keyboard show and hide events in order to scroll the text field
+ into view above the keyboard when the keyboard would otherwise hide it.
+ Troublesome that the observation is global, called whether or not the keyboard edits a
+ text field decorated by self.  Did not find another method that had access to
+ the geometry of the keyboard.
+ */
 - (id)init
 {
     self = [super init];
