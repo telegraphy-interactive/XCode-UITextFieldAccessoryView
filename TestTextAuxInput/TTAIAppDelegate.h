@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#include "TTAIModel.h"
+
 @interface TTAIAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) TTAIModel *model;
 
 @end

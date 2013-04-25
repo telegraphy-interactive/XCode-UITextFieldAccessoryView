@@ -7,40 +7,71 @@
 //
 
 #import "TTAIAppDelegate.h"
+#import "TTAIViewController.h"
 
 @implementation TTAIAppDelegate
 
+@synthesize model;
+
++ (NSURL*)appDataFile {
+    NSArray* possibleURLs = [[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
+    NSURL* fileURL = nil;
+    if ([possibleURLs count] >= 1) {
+        // Use the last directory (if multiple are returned)
+        fileURL = [[possibleURLs lastObject] URLByAppendingPathComponent:@"myFltTime"];
+    }
+    
+    return fileURL;
+}
+
+- (void) fetchModel {
+    model = [TTAIModel alloc];
+    NSURL * inURL = [TTAIAppDelegate appDataFile];
+    NSData * data = [NSData dataWithContentsOfURL:inURL];
+    if (data != nil) {
+        NSError * err = [NSError alloc];
+        NSDictionary * json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&err];
+        if (json == nil) {
+            NSLog(@"%s Error is %@", __func__, err);
+        }
+        else {
+            model = [model initFromJSON:json];
+        }
+    } else {
+        model = [model init];
+    }
+}
+
+- (void) persistModel {
+    NSURL * outURL = [TTAIAppDelegate appDataFile];
+    NSDictionary * founder = [model foundify];
+    NSError * err = [NSError alloc];
+    NSData * data = [NSJSONSerialization dataWithJSONObject:founder options:NSJSONWritingPrettyPrinted error:&err];
+    [data writeToURL:outURL options:0 error:&err];
+}
+
+- (void) setup {
+    [self fetchModel];
+    TTAIViewController *appController = (TTAIViewController *)self.window.rootViewController;
+    appController.model = model;
+    [appController syncDisplayForModelState];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [self setup];
     return YES;
 }
 							
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-}
-
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [self persistModel];
+    model = nil;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [self setup];
 }
 
 @end

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		320EDF7D1729764400FB3C46 /* MIT-LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 320EDF7C1729764300FB3C46 /* MIT-LICENSE */; };
+		320EDF801729B37400FB3C46 /* TTAIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 320EDF7F1729B37400FB3C46 /* TTAIModel.m */; };
 		326B54BB171DF15A00B42129 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326B54BA171DF15A00B42129 /* UIKit.framework */; };
 		326B54BD171DF15A00B42129 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326B54BC171DF15A00B42129 /* Foundation.framework */; };
 		326B54BF171DF15A00B42129 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326B54BE171DF15A00B42129 /* CoreGraphics.framework */; };
@@ -38,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		320EDF7C1729764300FB3C46 /* MIT-LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "MIT-LICENSE"; sourceTree = SOURCE_ROOT; };
+		320EDF7E1729B37400FB3C46 /* TTAIModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAIModel.h; sourceTree = "<group>"; };
+		320EDF7F1729B37400FB3C46 /* TTAIModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAIModel.m; sourceTree = "<group>"; };
 		326B54B7171DF15A00B42129 /* TestTextAuxInput.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTextAuxInput.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		326B54BA171DF15A00B42129 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		326B54BC171DF15A00B42129 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -121,6 +124,8 @@
 			children = (
 				326B54C9171DF15A00B42129 /* TTAIAppDelegate.h */,
 				326B54CA171DF15A00B42129 /* TTAIAppDelegate.m */,
+				320EDF7E1729B37400FB3C46 /* TTAIModel.h */,
+				320EDF7F1729B37400FB3C46 /* TTAIModel.m */,
 				326B54D2171DF15A00B42129 /* MainStoryboard.storyboard */,
 				326B54D5171DF15A00B42129 /* TTAIViewController.h */,
 				326B54D6171DF15A00B42129 /* TTAIViewController.m */,
@@ -265,6 +270,7 @@
 				326B54D7171DF15A00B42129 /* TTAIViewController.m in Sources */,
 				326B54F7171DF38000B42129 /* TTAITextAuxInputView.m in Sources */,
 				326B552017219F9E00B42129 /* TTAITextDatePickerView.m in Sources */,
+				320EDF801729B37400FB3C46 /* TTAIModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

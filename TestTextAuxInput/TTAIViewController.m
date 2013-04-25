@@ -20,6 +20,8 @@
 
 @implementation TTAIViewController
 
+@synthesize model;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -51,6 +53,13 @@
     [self setDateDecorator:nil];
     [self setLongDateDecorator:nil];
     [super viewDidUnload];
+}
+
+- (void)syncDisplayForModelState {
+    [self.hours setText:[model.hours stringValue]];
+    [self.night setText:[model.night stringValue]];
+    [self.startDateTime setText:[[self.dateDecorator dateFormatter] stringFromDate:model.started]];
+    [self.endDateTime setText:[[self.longDateDecorator dateFormatter] stringFromDate:model.ended]];
 }
 
 @end

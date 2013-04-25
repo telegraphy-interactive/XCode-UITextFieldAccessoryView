@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TTAIModel.h"
 
 @interface TTAIViewController : UIViewController
 
@@ -15,5 +16,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *startDateTime;
 @property (weak, nonatomic) IBOutlet UITextField *endDateTime;
 
+@property (weak, nonatomic) TTAIModel *model;
+
+- (void)syncDisplayForModelState;
 
 @end
