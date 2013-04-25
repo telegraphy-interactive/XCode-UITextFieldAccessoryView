@@ -5,9 +5,9 @@
 //  Copyright (c) 2013 Douglas Lovell. MIT License.
 //
 
-#import "TTAITextAuxInputView.h"
+#import "TTAITextAuxInput.h"
 
-@interface TTAITextAuxInputView ()
+@interface TTAITextAuxInput ()
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (atomic, strong) NSString *origValue;
@@ -15,7 +15,7 @@
 @end
 
 
-@implementation TTAITextAuxInputView
+@implementation TTAITextAuxInput
 
 @synthesize txtActiveField;
 

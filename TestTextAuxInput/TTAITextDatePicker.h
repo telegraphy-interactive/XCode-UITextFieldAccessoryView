@@ -5,9 +5,9 @@
 //  Copyright (c) 2013 Douglas Lovell. MIT License.
 //
 
-#import "TTAITextAuxInputView.h"
+#import "TTAITextAuxInput.h"
 
-@interface TTAITextDatePickerView : TTAITextAuxInputView
+@interface TTAITextDatePicker : TTAITextAuxInput
 
 @property (nonatomic, strong) NSDateFormatter* dateFormatter;
 

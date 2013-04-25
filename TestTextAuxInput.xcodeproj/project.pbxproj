@@ -23,8 +23,8 @@
 		326B54DF171DF15A00B42129 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326B54DE171DF15A00B42129 /* SenTestingKit.framework */; };
 		326B54E0171DF15A00B42129 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326B54BA171DF15A00B42129 /* UIKit.framework */; };
 		326B54E1171DF15A00B42129 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326B54BC171DF15A00B42129 /* Foundation.framework */; };
-		326B54F7171DF38000B42129 /* TTAITextAuxInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 326B54F6171DF38000B42129 /* TTAITextAuxInputView.m */; };
-		326B552017219F9E00B42129 /* TTAITextDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 326B551F17219F9E00B42129 /* TTAITextDatePickerView.m */; };
+		326B54F7171DF38000B42129 /* TTAITextAuxInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 326B54F6171DF38000B42129 /* TTAITextAuxInput.m */; };
+		326B552017219F9E00B42129 /* TTAITextDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 326B551F17219F9E00B42129 /* TTAITextDatePicker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,10 +59,10 @@
 		326B54D6171DF15A00B42129 /* TTAIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTAIViewController.m; sourceTree = "<group>"; };
 		326B54DD171DF15A00B42129 /* TestTextAuxInputTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestTextAuxInputTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		326B54DE171DF15A00B42129 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		326B54F5171DF38000B42129 /* TTAITextAuxInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAITextAuxInputView.h; sourceTree = "<group>"; };
-		326B54F6171DF38000B42129 /* TTAITextAuxInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAITextAuxInputView.m; sourceTree = "<group>"; };
-		326B551E17219F9E00B42129 /* TTAITextDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAITextDatePickerView.h; sourceTree = "<group>"; };
-		326B551F17219F9E00B42129 /* TTAITextDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAITextDatePickerView.m; sourceTree = "<group>"; };
+		326B54F5171DF38000B42129 /* TTAITextAuxInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAITextAuxInput.h; sourceTree = "<group>"; };
+		326B54F6171DF38000B42129 /* TTAITextAuxInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAITextAuxInput.m; sourceTree = "<group>"; };
+		326B551E17219F9E00B42129 /* TTAITextDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAITextDatePicker.h; sourceTree = "<group>"; };
+		326B551F17219F9E00B42129 /* TTAITextDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAITextDatePicker.m; sourceTree = "<group>"; };
 		32F21BD81721AA9300CF8949 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -129,10 +129,10 @@
 				326B54D2171DF15A00B42129 /* MainStoryboard.storyboard */,
 				326B54D5171DF15A00B42129 /* TTAIViewController.h */,
 				326B54D6171DF15A00B42129 /* TTAIViewController.m */,
-				326B54F5171DF38000B42129 /* TTAITextAuxInputView.h */,
-				326B54F6171DF38000B42129 /* TTAITextAuxInputView.m */,
-				326B551E17219F9E00B42129 /* TTAITextDatePickerView.h */,
-				326B551F17219F9E00B42129 /* TTAITextDatePickerView.m */,
+				326B54F5171DF38000B42129 /* TTAITextAuxInput.h */,
+				326B54F6171DF38000B42129 /* TTAITextAuxInput.m */,
+				326B551E17219F9E00B42129 /* TTAITextDatePicker.h */,
+				326B551F17219F9E00B42129 /* TTAITextDatePicker.m */,
 				326B54C1171DF15A00B42129 /* Supporting Files */,
 			);
 			path = TestTextAuxInput;
@@ -268,8 +268,8 @@
 				326B54C7171DF15A00B42129 /* main.m in Sources */,
 				326B54CB171DF15A00B42129 /* TTAIAppDelegate.m in Sources */,
 				326B54D7171DF15A00B42129 /* TTAIViewController.m in Sources */,
-				326B54F7171DF38000B42129 /* TTAITextAuxInputView.m in Sources */,
-				326B552017219F9E00B42129 /* TTAITextDatePickerView.m in Sources */,
+				326B54F7171DF38000B42129 /* TTAITextAuxInput.m in Sources */,
+				326B552017219F9E00B42129 /* TTAITextDatePicker.m in Sources */,
 				320EDF801729B37400FB3C46 /* TTAIModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

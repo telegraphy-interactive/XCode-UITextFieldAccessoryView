@@ -17,7 +17,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TTAITextAuxInputView : NSObject <UITextFieldDelegate>
+@interface TTAITextAuxInput : NSObject <UITextFieldDelegate>
 
 @property (nonatomic, strong) UITextField* txtActiveField;
 

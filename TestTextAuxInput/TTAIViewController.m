@@ -7,14 +7,14 @@
 //
 
 #import "TTAIViewController.h"
-#import "TTAITextAuxInputView.h"
-#import "TTAITextDatePickerView.h"
+#import "TTAITextAuxInput.h"
+#import "TTAITextDatePicker.h"
 
 @interface TTAIViewController ()
 
-@property  (nonatomic, strong) TTAITextAuxInputView* decorator;
-@property  (nonatomic, strong) TTAITextDatePickerView* dateDecorator;
-@property  (nonatomic, strong) TTAITextDatePickerView* longDateDecorator;
+@property  (nonatomic, strong) TTAITextAuxInput* decorator;
+@property  (nonatomic, strong) TTAITextDatePicker* dateDecorator;
+@property  (nonatomic, strong) TTAITextDatePicker* longDateDecorator;
 
 @end
 
@@ -27,18 +27,18 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
  
-    self.decorator = [[TTAITextAuxInputView alloc] init];
+    self.decorator = [[TTAITextAuxInput alloc] init];
     [self.decorator decorate:self.hours];
     [self.decorator decorate:self.night];
     
-    self.dateDecorator = [[TTAITextDatePickerView alloc] init];
+    self.dateDecorator = [[TTAITextDatePicker alloc] init];
     [self.dateDecorator decorate:self.startDateTime];
 
     NSDateFormatter *myDateFormatter = [[NSDateFormatter alloc] init];
     [myDateFormatter setDateStyle:NSDateFormatterFullStyle];
     [myDateFormatter setTimeStyle:NSDateFormatterNoStyle];
     
-    self.longDateDecorator = [[TTAITextDatePickerView alloc] init];
+    self.longDateDecorator = [[TTAITextDatePicker alloc] init];
     [self.longDateDecorator setDateFormatter:myDateFormatter];
     [self.longDateDecorator setDatePickerMode:UIDatePickerModeDate];
     [self.longDateDecorator decorate:self.endDateTime];

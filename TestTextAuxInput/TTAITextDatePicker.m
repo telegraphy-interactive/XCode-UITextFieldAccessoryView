@@ -5,16 +5,16 @@
 //  Copyright (c) 2013 Douglas Lovell. MIT License.
 //
 
-#import "TTAITextDatePickerView.h"
+#import "TTAITextDatePicker.h"
 
-@interface TTAITextDatePickerView ()
+@interface TTAITextDatePicker ()
 
 @property (nonatomic, strong) UIDatePicker* dateTimePicker;
 
 @end
 
 
-@implementation TTAITextDatePickerView
+@implementation TTAITextDatePicker
 
 - (NSDateFormatter *) dateFormatter {
     if (_dateFormatter == nil) {
