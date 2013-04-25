@@ -34,6 +34,12 @@
     return self;
 }
 
+- (UIDatePickerMode) setDatePickerMode:(UIDatePickerMode)mode {
+    UIDatePickerMode origMode = [self.dateTimePicker datePickerMode];
+    [self.dateTimePicker setDatePickerMode:mode];
+    return origMode;
+}
+
 - (void)dateChanged {
     NSString *dateTimeText = [[self dateFormatter] stringFromDate:self.dateTimePicker.date];
     [self.txtActiveField setText:dateTimeText];

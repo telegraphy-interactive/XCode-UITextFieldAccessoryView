@@ -38,6 +38,7 @@
     
     self.longDateDecorator = [[TTAITextDatePickerView alloc] init];
     [self.longDateDecorator setDateFormatter:myDateFormatter];
+    [self.longDateDecorator setDatePickerMode:UIDatePickerModeDate];
     [self.longDateDecorator decorate:self.endDateTime];
 }
 

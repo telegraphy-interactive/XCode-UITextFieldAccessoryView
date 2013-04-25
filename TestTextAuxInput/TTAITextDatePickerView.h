@@ -11,4 +11,8 @@
 
 @property (nonatomic, strong) NSDateFormatter* dateFormatter;
 
+// set the new mode, return the old
+- (UIDatePickerMode) setDatePickerMode:(UIDatePickerMode)mode;
+
+
 @end
