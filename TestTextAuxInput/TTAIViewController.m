@@ -46,6 +46,10 @@
     [self setNight:nil];
     [self setStartDateTime:nil];
     [self setEndDateTime:nil];
+    [self setDecorator:nil];
+    [self setDateDecorator:nil];
+    [self setLongDateDecorator:nil];
     [super viewDidUnload];
 }
+
 @end
