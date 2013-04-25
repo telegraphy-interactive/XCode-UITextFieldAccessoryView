@@ -62,4 +62,20 @@
     [self.endDateTime setText:[[self.longDateDecorator dateFormatter] stringFromDate:model.ended]];
 }
 
+- (IBAction)hoursWasEdited:(id)sender {
+    [model setHours:[NSNumber numberWithFloat:[[self.hours text] floatValue]]];
+}
+
+- (IBAction)nightWasEdited:(id)sender {
+    [model setNight:[NSNumber numberWithFloat:[[self.night text] floatValue]]];
+}
+
+- (IBAction)startedWasEdited:(id)sender {
+    [model setStarted:[[self.dateDecorator dateFormatter] dateFromString:[self.startDateTime text]]];
+}
+
+- (IBAction)endedWasEdited:(id)sender {
+    [model setEnded:[[self.longDateDecorator dateFormatter] dateFromString:[self.endDateTime text]]];
+}
+
 @end

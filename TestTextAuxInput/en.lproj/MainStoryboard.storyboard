@@ -16,6 +16,9 @@
                                 <rect key="frame" x="207" y="278" width="62" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="yes" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="hoursWasEdited:" destination="2" eventType="editingDidEnd" id="MoY-4Y-Tha"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Hours with tenths" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pUX-fc-Clt">
                                 <rect key="frame" x="35" y="281" width="164" height="21"/>
@@ -24,9 +27,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="gyg-eh-hOO">
-                                <rect key="frame" x="207" y="317" width="62" height="30"/>
+                                <rect key="frame" x="207" y="316" width="62" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="yes" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="nightWasEdited:" destination="2" eventType="editingDidEnd" id="SuZ-pk-4da"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Night with tenths" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ohg-sY-JRQ">
                                 <rect key="frame" x="35" y="320" width="164" height="21"/>
@@ -38,6 +44,9 @@
                                 <rect key="frame" x="115" y="357" width="154" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="yes" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="startedWasEdited:" destination="2" eventType="editingDidEnd" id="M9O-o1-g38"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Started" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UW1-gb-a6N">
                                 <rect key="frame" x="35" y="361" width="72" height="21"/>
@@ -49,6 +58,9 @@
                                 <rect key="frame" x="115" y="396" width="154" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="yes" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="endedWasEdited:" destination="2" eventType="editingDidEnd" id="8tF-PM-9zY"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ended" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ojv-Mz-28h">
                                 <rect key="frame" x="35" y="399" width="72" height="21"/>
@@ -71,17 +83,6 @@
             <point key="canvasLocation" x="-95" y="-36"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="TTAIViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TTAIViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="endDateTime" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="hours" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="night" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="startDateTime" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

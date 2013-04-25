@@ -20,4 +20,9 @@
 
 - (void)syncDisplayForModelState;
 
+- (IBAction)hoursWasEdited:(id)sender;
+- (IBAction)nightWasEdited:(id)sender;
+- (IBAction)startedWasEdited:(id)sender;
+- (IBAction)endedWasEdited:(id)sender;
+
 @end
