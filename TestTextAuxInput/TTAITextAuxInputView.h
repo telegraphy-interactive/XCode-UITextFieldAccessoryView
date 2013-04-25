@@ -12,5 +12,7 @@
 @property (nonatomic, strong) UITextField* txtActiveField;
 
 - (void)decorate:(UITextField *)textField;
+- (void)reset;
+
 
 @end

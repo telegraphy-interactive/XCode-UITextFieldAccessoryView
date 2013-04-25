@@ -34,6 +34,22 @@
     return self;
 }
 
+- (void)setPickerFromTextContent {
+    NSString* stringValue = [self.txtActiveField text];
+    NSDate *curDate;
+    if (0 < [stringValue length]) {
+        curDate = [[self dateFormatter] dateFromString:stringValue];
+    } else {
+        curDate = [NSDate date];
+    }
+    [self.dateTimePicker setDate:curDate];
+}
+
+- (void)reset {
+    [super reset];
+    [self setPickerFromTextContent];
+}
+
 - (UIDatePickerMode) setDatePickerMode:(UIDatePickerMode)mode {
     UIDatePickerMode origMode = [self.dateTimePicker datePickerMode];
     [self.dateTimePicker setDatePickerMode:mode];
@@ -53,11 +69,7 @@
 
 -(void)textFieldDidBeginEditing:(UITextField*)textField {
     [super textFieldDidBeginEditing:textField];
-    NSString* stringValue = [textField text];
-    if (0 < [stringValue length]) {
-         NSDate *curDate = [[self dateFormatter] dateFromString:stringValue];
-        [self.dateTimePicker setDate:curDate];
-    }
+    [self setPickerFromTextContent];
 }
 
 @end
