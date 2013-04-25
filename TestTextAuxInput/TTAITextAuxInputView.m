@@ -10,6 +10,7 @@
 @interface TTAITextAuxInputView ()
 
 @property (nonatomic, strong) UIScrollView *scrollView;
+@property (atomic, strong) NSString *origValue;
 
 @end
 
@@ -40,18 +41,33 @@
     [self.txtActiveField resignFirstResponder];
 }
 
+- (void)reset {
+    [self.txtActiveField setText:self.origValue];
+}
+
+- (void)cancel {
+    [self reset];
+    [self done];
+}
+
 - (void)decorate:(UITextField *)textField {
     textField.delegate = self;
     
     UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0,0,100,44)];
     [toolbar setBarStyle:UIBarStyleBlack];
-        
-    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc ]initWithTitle:@"Done"
-                                                                   style:UIBarButtonItemStyleDone
-                                                                  target:self
-                                                                  action:@selector(done)];
-    [toolbar setItems:[NSArray arrayWithObject:doneButton] animated:false];
-
+    
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc ]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel                                                                 target:self
+                                                                                  action:@selector(cancel)];
+    UIBarButtonItem *spaceItem1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:NULL];
+    UIBarButtonItem *resetButton = [[UIBarButtonItem alloc ]initWithBarButtonSystemItem:UIBarButtonSystemItemUndo
+                                                                                 target:self
+                                                                                 action:@selector(reset)];
+    UIBarButtonItem *spaceItem2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:NULL];
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc ]initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                target:self
+                                                                                action:@selector(done)];
+    [toolbar setItems:[NSArray arrayWithObjects:cancelButton, spaceItem1, resetButton, spaceItem2, doneButton, nil] animated:false];
+    
     [textField setInputAccessoryView:toolbar];
 }
 
@@ -95,6 +111,7 @@
 
 -(void)textFieldDidBeginEditing:(UITextField*)textField {
     self.txtActiveField = textField;
+    self.origValue = textField.text;
 }
 
 -(void)textFieldDidEndEditing:(UITextField*)textField {
