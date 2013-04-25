@@ -10,27 +10,32 @@
 @interface TTAITextDatePickerView ()
 
 @property (nonatomic, strong) UIDatePicker* dateTimePicker;
-@property (nonatomic, strong) NSDateFormatter* dateFormatter;
 
 @end
 
 
 @implementation TTAITextDatePickerView
 
+- (NSDateFormatter *) dateFormatter {
+    if (_dateFormatter == nil) {
+        _dateFormatter = [[NSDateFormatter alloc] init];
+        [_dateFormatter setDateStyle:NSDateFormatterShortStyle];
+        [_dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    }
+    return _dateFormatter;
+}
+
 - (id)init
 {
     self = [super init];
     if (self) {
         self.dateTimePicker = [[UIDatePicker alloc ]initWithFrame:CGRectMake(0,0,100,44)];
-        self.dateFormatter = [[NSDateFormatter alloc] init];
-        [self.dateFormatter setDateStyle:NSDateFormatterShortStyle];
-        [self.dateFormatter setTimeStyle:NSDateFormatterShortStyle];
     }
     return self;
 }
 
 - (void)dateChanged {
-    NSString *dateTimeText = [self.dateFormatter stringFromDate:self.dateTimePicker.date];
+    NSString *dateTimeText = [[self dateFormatter] stringFromDate:self.dateTimePicker.date];
     [self.txtActiveField setText:dateTimeText];
 }
 
@@ -44,7 +49,7 @@
     [super textFieldDidBeginEditing:textField];
     NSString* stringValue = [textField text];
     if (0 < [stringValue length]) {
-         NSDate *curDate = [self.dateFormatter dateFromString:stringValue];
+         NSDate *curDate = [[self dateFormatter] dateFromString:stringValue];
         [self.dateTimePicker setDate:curDate];
     }
 }

@@ -9,4 +9,6 @@
 
 @interface TTAITextDatePickerView : TTAITextAuxInputView
 
+@property (nonatomic, strong) NSDateFormatter* dateFormatter;
+
 @end

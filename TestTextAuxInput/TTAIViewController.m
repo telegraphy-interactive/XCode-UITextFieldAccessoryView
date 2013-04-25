@@ -14,6 +14,7 @@
 
 @property  (nonatomic, strong) TTAITextAuxInputView* decorator;
 @property  (nonatomic, strong) TTAITextDatePickerView* dateDecorator;
+@property  (nonatomic, strong) TTAITextDatePickerView* longDateDecorator;
 
 @end
 
@@ -30,7 +31,14 @@
     
     self.dateDecorator = [[TTAITextDatePickerView alloc] init];
     [self.dateDecorator decorate:self.startDateTime];
-    [self.dateDecorator decorate:self.endDateTime];
+
+    NSDateFormatter *myDateFormatter = [[NSDateFormatter alloc] init];
+    [myDateFormatter setDateStyle:NSDateFormatterFullStyle];
+    [myDateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    
+    self.longDateDecorator = [[TTAITextDatePickerView alloc] init];
+    [self.longDateDecorator setDateFormatter:myDateFormatter];
+    [self.longDateDecorator decorate:self.endDateTime];
 }
 
 - (void)viewDidUnload {
